@@ -9,7 +9,9 @@ engin = create_engine('sqlite:///home_inventory.db', echo=True)
 Session = sessionmaker(bind=engin)
 session = Session()
 
-
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(debug=False)
