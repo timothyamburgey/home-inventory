@@ -11,7 +11,10 @@ session = Session()
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    items = session.query(HomeItem).all()
+    for item in items:
+        print(item.id, item.item_name, item.item_description, item.value)
+    return render_template("index.html", item_data=items)
 
 if __name__ == '__main__':
     app.run(debug=False)
