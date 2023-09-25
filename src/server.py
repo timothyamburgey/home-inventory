@@ -16,5 +16,9 @@ def home():
         print(item.id, item.item_name, item.item_description, item.value)
     return render_template("index.html", item_data=items)
 
+@app.route("/add_item", methods=["POST", "GET"])
+def add_item():
+    return render_template("AddPage.html")
+
 if __name__ == '__main__':
     app.run(debug=False)
