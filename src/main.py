@@ -1,13 +1,16 @@
-from sqlalchemy import create_engine, ForeignKey, Column, Integer, String, Float, Text, CHAR
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-import datetime
-from database_classes import HomeItem
+# This is a sample Python script.
 
-engin = create_engine('sqlite:///home_inventory.db', echo=True)
-Session = sessionmaker(bind=engin)
-session = Session()
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-response = session.query(HomeItem).all()
-for item in response:
-    print(item.item_name)
+
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
