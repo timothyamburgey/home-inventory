@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add | Home Inventory Application
+{% endblock %}
+
+{% block body %}
+<div class="content-section">
+  <form method="post" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Add an Item</legend>
+      <div class="form-group">
+        {{ form.item_name.label(class="form-control-label") }}
+        {{ form.item_name(class="form-control form-control-lg") }}
+      </div>
+      <div class="form-group">
+        {{ form.item_location.label(class="form-control-label") }}
+        {{ form.item_location(class="form-control form-control-lg") }}
+      </div>
+      <div class="form-group">
+        {{ form.item_quantity.label(class="form-control-label") }}
+        {{ form.item_quantity(class="form-control form-control-lg") }}
+      </div>
+      <div class="form-group">
+        {{ form.item_value.label(class="form-control-label") }}
+        {{ form.item_value(class="form-control form-control-lg") }}
+      </div>
+      <div class="form-group pt-3">
+        {{ form.submit(class="btn btn-outline-info")}}
+      </div>
+    </fieldset>
+  </form>
+</div>
+{% endblock %}
+```

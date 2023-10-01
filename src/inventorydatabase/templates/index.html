@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home Inventory Application
+{% endblock %}
+
+{% block body %}
+
+<table class="table">
+	<tr>
+		<th>ID</th>
+		<th>Item</th>
+		<th>Location</th>
+		<th>Quantity</th>
+		<th>Value</th>
+		<th>Actions</th>
+	</tr>
+	{% for item in item_data %}
+	<tr>
+		<td>{{ item.id }}</td>
+		<td>{{ item.item_name}}</td>
+		<td>{{ item.item_location}}</td>
+		<td>{{ item.item_quantity}}</td>
+		<td>${{ item.item_value}}</td>
+		<td><a href="/edit/{{item.id}}">Edit</a> <a href="/delete/{{item.id}}">Delete</a></td>
+	</tr>
+	{% endfor %}
+	</table>
+{% endblock %}
